@@ -193,6 +193,9 @@ fi
 bash funscript/develop/env.sh
 ```
 
+本仓库只维护 Shell 脚本所需的可复现 Python 环境，不构建或发布 Python 包；因此使用
+`[tool.uv] package = false`，不声明 `build-backend`。
+
 ---
 
 ## 关于 farfarfun
@@ -201,6 +204,7 @@ bash funscript/develop/env.sh
 涵盖云存储、数据处理、AI、多媒体与开发工具链等方向。
 
 - 🏠 组织主页：<https://github.com/farfarfun>
+- 📦 PyPI：<https://pypi.org/user/niuliangtao/>
 - 📧 联系：farfarfun@qq.com
 
 本项目基于 [MIT](LICENSE) 协议开源。

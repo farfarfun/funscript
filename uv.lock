@@ -741,12 +741,12 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "farfuntask", specifier = ">=0.0.7" },
-    { name = "funbuild", specifier = ">=0.1" },
+    { name = "funbuild", specifier = ">=1.6.66" },
     { name = "fundrive", specifier = ">=1.2" },
-    { name = "funfile", specifier = ">=1.0" },
+    { name = "funfile", specifier = ">=1.0.39" },
     { name = "funpypi", specifier = ">=0.1" },
     { name = "funread", specifier = ">=0.1" },
-    { name = "funsecret", specifier = ">=1.4" },
+    { name = "funsecret", specifier = ">=1.4.84" },
     { name = "funsecret-snapshot", specifier = ">=0.1" },
     { name = "requests-toolbelt", specifier = ">=1.0" },
 ]

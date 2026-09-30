@@ -3,15 +3,17 @@ name = "funscript"
 version = "0.1.0"
 description = "funscript 的可复现脚本环境依赖"
 requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 dependencies = [
     "farfuntask>=0.0.7",
-    "funfile>=1.0",
+    "funfile>=1.0.39",
     "funpypi>=0.1",
     "funread>=0.1",
-    "funsecret>=1.4",
+    "funsecret>=1.4.84",
     "funsecret-snapshot>=0.1",
     "fundrive>=1.2",
-    "funbuild>=0.1",
+    "funbuild>=1.6.66",
     "requests-toolbelt>=1.0",
 ]
 
