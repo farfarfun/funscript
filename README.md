@@ -4,7 +4,7 @@ ___
 
 [awesome-scripts](https://github.com/superhj1987/awesome-scripts) 项目提供了很多有用的脚本工具。
 
-## 网络脚本的使用
+## 脚本查看与环境同步
 
 ### 下载并查看
 
@@ -12,20 +12,16 @@ ___
 curl -fsSL https://github.com/farfarfun/funscript/raw/master/funscript/develop/env.sh | cat
 ```
 
-### 下载并执行
+### 同步脚本环境
 
 ```bash
-# curl -s 表示 silence 即不输出进度和错误信息
-curl -s "https://github.com/farfarfun/funscript/raw/master/funscript/develop/env.sh" | bash -s
+# 需要预先安装 uv：https://docs.astral.sh/uv/getting-started/installation/
+git clone https://github.com/farfarfun/funscript.git
+cd funscript
+bash funscript/develop/env.sh
 ```
 
-
-```bash
-# 执行
-curl "http://xxx.com/xx/xx.sh" | bash
-# 脚本传参
-curl http://example.com/script.sh | bash -s -- arg1 arg2 
-```
+该命令在仓库根目录读取 `pyproject.toml` 和 `uv.lock`，并执行 `uv sync`。
 
 curl 命令其它常见用法 
 
@@ -173,14 +169,11 @@ $ echo $?
 ```
 #!/bin/bash
 
-touch /root/test 2&gt; /dev/null
-
-if [$? -eq 0 ]
-then
+if touch /root/test 2>/dev/null; then
   echo "Successfully created file"
   exit 0
 else
-  echo "Could not create file" &gt;&amp;2
+  echo "Could not create file" >&2
   exit 1
 fi
 ```
