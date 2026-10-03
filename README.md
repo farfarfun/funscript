@@ -21,7 +21,7 @@ cd funscript
 bash funscript/develop/env.sh
 ```
 
-该命令在仓库根目录读取 `pyproject.toml` 和 `uv.lock`，并执行 `uv sync`。
+该命令在仓库根目录读取 `pyproject.toml`，并执行 `uv sync`。
 
 curl 命令其它常见用法 
 
@@ -180,7 +180,7 @@ fi
 
 ## 环境依赖
 
-依赖由 `pyproject.toml` 和 `uv.lock` 管理，可执行：
+依赖由 `pyproject.toml` 管理，可执行：
 
 ```bash
 bash funscript/develop/env.sh
