@@ -102,10 +102,10 @@ Linux Shell 重定向分为两种，一种输入重定向，一种是输出重�
 
 最常见的指令莫过于
 
-```
-ls -l &gt;out.log 2&gt;&amp;1 # 将命令 ls -l 的正确结果和错误结果一起保存在 out.log 文件
-ls -l &gt;out.log 2&gt;err.log # 将命令 ls -l 的正确结果保存在 out.log 文件, 错误结果保存在 err.log
-ls java &amp;&gt;/dev/null # 如果你既不想把命令的输出结果保存到文件，也不想把命令的输出结果显示到屏幕上，干扰命令的执行，那么可以把命令的所有结果重定向到 /dev/null 文件中。注意没有 &amp; 的话, 错误结果还是会输出
+```bash
+ls -l >out.log 2>&1 # 将命令 ls -l 的正确结果和错误结果一起保存在 out.log 文件
+ls -l >out.log 2>err.log # 将命令 ls -l 的正确结果保存在 out.log 文件, 错误结果保存在 err.log
+ls java &>/dev/null # 如果你既不想把命令的输出结果保存到文件，也不想把命令的输出结果显示到屏幕上，干扰命令的执行，那么可以把命令的所有结果重定向到 /dev/null 文件中。注意没有 & 的话, 错误结果还是会输出
 ```
 
 ### 输入重定向
@@ -126,7 +126,7 @@ C语言中文网
 http://c.biancheng.net/
 成立7年了
 日IP数万
-$ wc -l &lt;readme.txt  #输入重定向
+$ wc -l <readme.txt  #输入重定向
 4
 ```
 
@@ -134,10 +134,15 @@ $ wc -l &lt;readme.txt  #输入重定向
 
 下面的命令组使用了在 Bash 里称为 **list constructs** 的工具。它允许你通过 &&（代表 **and**） 和 || (代表 **or**） 将命令串到一起。上面的命令将会执行 `ls java` 命令，如果退出码是 0 命令 echo "lala" 将被执行。但如果 `ls java` 的退出码为 1 ，圆括号里的命令将在之后被执行。圆括号里的命令也通过 && 、 || 被串到一起。
 
+```bash
+ls # 当前目录下有三个文件夹
+ls java && echo "lala" || (ls temp && echo "blabla" || echo "fail") # java 文件夹不存在，执行会异常，temp 文件夹存在可以正常输出里面的文件
 ```
-$ ls # 当前目录下有三个文件夹
+
+预期输出：
+
+```text
 arthas  project temp
-$ ls java &amp;&amp; echo "lala" || (ls temp &amp;&amp; echo "blabla" || echo "fail") # java 文件夹不存在，执行会异常，temp 文件夹存在可以正常输出里面的文件
 ls: java: No such file or directory
 err.log                log.text               self-installer-test.sh self-installer.sh      test.sh
 blabla
@@ -197,7 +202,6 @@ bash funscript/develop/env.sh
 涵盖云存储、数据处理、AI、多媒体与开发工具链等方向。
 
 - 🏠 组织主页：<https://github.com/farfarfun>
-- 📦 PyPI：<https://pypi.org/user/niuliangtao/>
 - 📧 联系：farfarfun@qq.com
 
 本项目基于 [MIT](LICENSE) 协议开源。
