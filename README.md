@@ -1,10 +1,12 @@
-## funscript 包含个人日常开发脚本
+# funscript
+
+个人日常开发脚本合集：收录可直接下载执行的 Shell 脚本，以及 Shell 特殊变量、输入输出重定向、list constructs、退出码等常用写法的速查笔记；脚本运行所需的 Python 环境由 `uv` 按 `pyproject.toml` 同步。
 
 ___
 
 [awesome-scripts](https://github.com/superhj1987/awesome-scripts) 项目提供了很多有用的脚本工具。
 
-## 脚本查看与环境同步
+## 安装与使用
 
 ### 下载并查看
 
