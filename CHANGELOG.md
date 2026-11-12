@@ -2,6 +2,12 @@
 
 ## 未发布
 
+### 废弃
+
+- 移除 `funpypi>=0.1` 依赖：`farfarfun/funpypi` 已下线归档（PyPI 最后发布停在 2023-10-16
+  的 0.2.1），其版本递增与批量安装能力已由本仓库已声明的 `funbuild>=1.6.66` 完整覆盖。
+  该依赖在本仓库从未被引用——`funscript` 没有 Python 代码，只有 `develop/env.sh`。
+
 ### 修复
 
 - README 补充 `funscript/develop/env.sh` 的正确使用方式：该脚本依赖仓库根目录下的
